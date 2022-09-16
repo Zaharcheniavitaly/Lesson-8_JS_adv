@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Интернет-магазин</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style-2.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div id="app">
+		
+		<!--header start -->
+	<header class="header">
+
+	<!--burger-menu start-->
+	<div class="header__wrapper-burger">
+		<button class="header__button-burger">
+			<img src="img/svg/icon-burger.svg" alt="burger">
+		</button>
+		<nav class="header__nav">
+			<div class="header__nav-wrp">
+				<button type="button" class="header__buttom-close">
+					<img class="header__nav-close" src="img/svg/icon-close.svg" alt="icon-close">
+				</button>
+				<h2 class="header__menu-heading">menu</h2>
+
+				<ul class="header__nav-list">
+					<li class="header__nav-item nav-sub-item">
+						<a class="nav-sub-item__title" href="#!">man</a>
+						<ul class="nav-sub-item__list">
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Accessories</a>
+							</li>
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Bags</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Denim</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">T-Shirts</a>
+							</li>
+
+
+						</ul>
+					</li>
+
+					<li class="header__nav-item nav-sub-item">
+						<a class="nav-sub-item__title" href="#!">woman</a>
+						<ul class="nav-sub-item__list">
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Accessories</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Jackets & Coats</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Polos</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">T-Shirts</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Shirts</a>
+							</li>
+
+						</ul>
+					</li>
+
+					<li class="header__nav-item nav-sub-item">
+						<a class="nav-sub-item__title" href="#!">kids</a>
+						<ul class="nav-sub-item__list">
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Accessories</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Jackets & Coats</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Polos</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">T-Shirts</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Shirts</a>
+							</li>
+
+							<li class="nav-sub-item__item">
+								<a class="nav-sub-item__item-link" href="#!">Bags</a>
+							</li>
+
+						</ul>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
+		
+	</div>
+
+<!--burger-menu end-->
+
+
+		<div class="container header__wrapp">
+			<ul class="header__logo-loupe">
+				<li class="header__logo">
+					<a href="index.html">
+						<img src="img/logo.png" alt="logo">
+					</a>
+				</li>
+
+			</ul>
+
+			<ul class="header__list">
+
+				<li class="header__item">
+					<a class="header__link" href="registration.html">
+						<img class="header__link-account" src="img/svg/account.svg" alt="account">
+					</a>
+				</li>
+
+				<li class="header__item">
+
+
+					<div class="cart">
+
+						<filter-comp></filter-comp>
+			
+						<button-comp></button-comp>
+			
+						<cart :cart-items="cartItems"
+							
+							:visibility="showCart"></cart>
+			
+					</div>
+
+
+				</li>
+			</ul>
+
+		</div>
+	
+
+	</header>
+	<!--header end -->
+
+
+<main>
+
+<!--brand start -->
+<brand-comp></brand-comp>
+
+<!--brand end -->
+
+<!--sales start -->
+<sales-comp></sales-comp>
+
+<!--sales end -->
+
+<!--catalog start -->
+<section class="catalog container">
+	<h2 class="catalog__heading">Fetured Items</h2>
+	<p class="catalog__text">Shop for items based on what we featured in this week</p>
+
+
+	<products :products="filtered" 
+			 @add-product="addProduct"></products>
+
+			<error-comp v-show="$root.error"></error-comp>
+
+</section>
+<!--catalog end -->
+
+
+	<!--services start -->
+	<services></services>
+		<!--section__services end -->
+	</main>
+
+
+
+		<!--footer start -->
+		<footer-comp></footer-comp>
+		<!--footer end -->
+
+	</div>
+		
+	
+	<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+		integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/FooterComponent.js"></script>
+	
+	<script src="js/ProductComponent.js"></script>
+	<script src="js/CartComponent.js"></script>
+<script src="js/BrandComponent.js"></script>
+<script src="js/SalesComponent.js"></script>
+<script src="js/ServicesComponent.js"></script>
+
+
+	<script src="js/FilterComponent.js"></script>
+	<script src="js/ErrorComponent.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/burgerMenu.js"></script>
+
+</body>
+
+</html>

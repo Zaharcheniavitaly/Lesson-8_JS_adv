@@ -1,0 +1,56 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "id_product": 124,
+            "product_name": "Товар 1",
+            "price": 41.9,
+            "img": "img/jacket.jpg",
+            "quantity": 4
+        },
+        {
+            "quantity": 2,
+            "id_product": 457,
+            "product_name": "Товар 2",
+            "price": 51.4,
+            "img": "img/dress.jpg"
+        },
+        {
+            "quantity": 4,
+            "id_product": 123,
+            "product_name": "Товар 3",
+            "price": 50.6,
+            "img": "img/bike.jpg"
+        },
+        {
+            "quantity": 1,
+            "id_product": 456,
+            "product_name": "Товар 4",
+            "price": 52.8,
+            "img": "img/trousers.jpg"
+        },
+        {
+            "quantity": 1,
+            "id_product": 459,
+            "product_name": "Товар 5",
+            "price": 34.5,
+            "img": "img/blazer.jpg"
+        },
+        {
+            "quantity": 2,
+            "id_product": 458,
+            "product_name": "Товар 6",
+            "price": 42.8,
+            "img": "img/blouse.jpg"
+        },
+        {
+            "quantity": 1,
+            "id_product": 124,
+            "product_name": "Товар 1",
+            "description": "Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
+            "price": 41.9,
+            "img": "img/jacket.jpg"
+        }
+    ]
+}
